@@ -10,4 +10,8 @@ Given a matrix, and a target, return the number of non-empty submatrices that su
 
 ### Solution
 
+#### Prerequisite Problem
+Given an array and a traget, find the number of subarrays with sum equal to sum.
+
+
 
