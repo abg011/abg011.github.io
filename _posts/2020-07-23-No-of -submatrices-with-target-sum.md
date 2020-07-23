@@ -14,5 +14,5 @@ Given a matrix, and a target, return the number of non-empty submatrices that su
     Given an array and a traget, find the number of subarrays with sum equal to sum.
 
 ##### Solution
-    #Brute Force#
+    ## Brute Force#
 
