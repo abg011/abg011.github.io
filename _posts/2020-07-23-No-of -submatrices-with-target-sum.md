@@ -15,5 +15,6 @@ Given a matrix, and a target, return the number of non-empty submatrices that su
 
 ##### Solution
 _O(n^2) solution_ : Simply compare sum of all subarrays with target.
+
 _O(n) solution_ :
 
