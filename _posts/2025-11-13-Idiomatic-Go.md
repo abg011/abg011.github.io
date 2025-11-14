@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Go Concurrency Explained"
-date: 2019-09-26
+date: 2025-11-13
 ---
 
 # Go Concurrency Explained 😎  
