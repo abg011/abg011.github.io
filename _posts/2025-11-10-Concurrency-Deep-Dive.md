@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "# 🧠 Concurrency Models in Go, Python, and Node.js — A Deep Dive"
+title: "🧠 Concurrency Models in Go, Python, and Node.js — A Deep Dive"
 date: 2025-11-10
 ---
 
