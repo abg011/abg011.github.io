@@ -2,6 +2,7 @@
 layout: post
 title: "Topological Sorting (Kahn Algorithm)"
 date: 2019-10-14
+tags: [graphs]
 ---
 
 ## Topological Sorting using Kahn Algorithm

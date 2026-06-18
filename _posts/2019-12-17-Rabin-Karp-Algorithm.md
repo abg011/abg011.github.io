@@ -2,6 +2,7 @@
 layout: post
 title: "Rabin-Karp Algorithm"
 date: 2019-12-17
+tags: [strings]
 ---
 ## Rabin-Karp Algorithm for Pattern Searching
 ### Problem

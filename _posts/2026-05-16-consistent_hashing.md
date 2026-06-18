@@ -2,6 +2,7 @@
 layout: post
 title: "Consistent Hashing and More"
 date: 2026-05-16
+tags: [distributed-systems, system-design]
 ---
 
 # Consistent Hashing, the Karger Paper, and Modern Distributed Systems — Q&A Notes

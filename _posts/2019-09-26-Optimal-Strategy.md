@@ -2,6 +2,7 @@
 layout: post
 title: "Optimal Strategy for a game(DP)"
 date: 2019-09-26
+tags: [dynamic-programming]
 ---
 
 ## Optimal Strategy For a Game

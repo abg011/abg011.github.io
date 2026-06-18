@@ -2,6 +2,7 @@
 layout: post
 title: "Changing prime numbers"
 date: 2019-12-18
+tags: [math, graphs]
 ---
 
 ## Shortest path to reach from one prime number to other by changing one digit at a time.

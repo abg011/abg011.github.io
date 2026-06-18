@@ -2,6 +2,7 @@
 layout: post
 title: "Longest Repeating Subsequence - DP"
 date: 2019-12-18
+tags: [dynamic-programming, strings]
 ---
 
 ## Longest Repeating Subsequence  

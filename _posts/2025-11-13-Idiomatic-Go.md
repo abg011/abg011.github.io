@@ -2,6 +2,7 @@
 layout: post
 title: "Go Concurrency Explained"
 date: 2025-11-13
+tags: [go]
 ---
 
 # Go Concurrency Explained 😎  

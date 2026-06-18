@@ -2,6 +2,7 @@
 layout: post
 title: "Smallest Multiple With 0 and 1"
 date: 2019-11-07
+tags: [graphs, math]
 ---
 
 ## Smallest Multiple With 0 and 1

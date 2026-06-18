@@ -2,6 +2,7 @@
 layout: post
 title: "Maximum area rectangle in a Histogram"
 date: 2019-12-19
+tags: [arrays, stack]
 ---
 
 ## Maximum area rectangle in a histogram  

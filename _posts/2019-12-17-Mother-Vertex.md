@@ -2,6 +2,7 @@
 layout: post
 title: "Finding Mother Vertex in a graph"
 date: 2019-12-17
+tags: [graphs]
 ---
 
 ## Finding Mother Vertex in a graph

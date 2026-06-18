@@ -2,6 +2,7 @@
 layout: post
 title: "KMP Algorithm"
 date: 2019-12-17
+tags: [strings]
 ---
 ## KMP Algorithm for Pattern Searching
 ### Problem

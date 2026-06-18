@@ -2,6 +2,7 @@
 layout: post
 title: "Submatrices with given sum"
 date: 2020-07-23
+tags: [arrays, hashing]
 ---
 
 ### Problem

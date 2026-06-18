@@ -2,6 +2,7 @@
 layout: post
 title: "Longest Prefix Suffix"
 date: 2019-12-16
+tags: [strings]
 ---
 ## Longest Prefix Suffix
 ### Problem

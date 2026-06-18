@@ -2,6 +2,7 @@
 layout: post
 title: "Maximum Grid Score (LC Hard)"
 date: 2026-06-07
+tags: [dynamic-programming, arrays]
 ---
 
 # LeetCode 3225: Maximum Score From Grid Operations - Intuition and DP Derivation

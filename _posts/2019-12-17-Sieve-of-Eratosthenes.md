@@ -2,6 +2,7 @@
 layout: post
 title: "Sieve of Eratosthenes"
 date: 2019-12-17
+tags: [math]
 ---
 
 ## Sieve of Eratosthenes

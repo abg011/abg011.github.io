@@ -2,6 +2,7 @@
 layout: post
 title: "Swaps to sort"
 date: 2019-10-15
+tags: [arrays]
 ---
 
 ## Calculating the number of swaps to sort an array

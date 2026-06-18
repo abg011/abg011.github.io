@@ -2,6 +2,7 @@
 layout: post
 title: "System Design - Notification Service"
 date: 2026-05-20
+tags: [system-design, distributed-systems]
 ---
 
 # Designing a Large-Scale Notification Service — System Design Notes

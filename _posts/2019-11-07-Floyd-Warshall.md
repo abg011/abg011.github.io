@@ -2,6 +2,7 @@
 layout: post
 title: "Floyd Warshall Algorithm"
 date: 2019-11-07
+tags: [graphs, dynamic-programming]
 ---
 
 ## Find all four sum numbers

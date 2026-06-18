@@ -2,6 +2,7 @@
 layout: post
 title: "Circle of Strings - Eulerian Circuit"
 date: 2019-11-07
+tags: [strings, graphs]
 ---
 
 ##  Circle of strings

@@ -2,6 +2,7 @@
 layout: post
 title: "Zero sum subarrays(Hashing)"
 date: 2019-09-30
+tags: [arrays, hashing]
 ---
 
 ## Zero sum subarrays

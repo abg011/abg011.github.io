@@ -2,6 +2,7 @@
 layout: post
 title: "Maximum XOR Subset"
 date: 2019-10-09
+tags: [bit-manipulation]
 ---
 
 ## Maximum XOR Subset

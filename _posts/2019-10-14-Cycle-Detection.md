@@ -2,6 +2,7 @@
 layout: post
 title: "Cycle Detection"
 date: 2019-10-14
+tags: [graphs]
 ---
 
 ## Cycle Detection in Directed and Undirected Graphs

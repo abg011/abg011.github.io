@@ -2,6 +2,7 @@
 layout: post
 title: "Euler's Totient Function"
 date: 2019-11-24
+tags: [math]
 ---
 
 ### Problem

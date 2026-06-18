@@ -3,11 +3,138 @@ layout: default
 title: Blog
 ---
 <h1>Blog</h1>
-<ul class="post-list">
-  {% for post in site.posts %}
-  <li>
-    <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-  </li>
+<p class="blog-sub">
+  Notes on distributed systems, algorithms, and AI.
+  <span class="blog-count" id="blog-count">{{ site.posts | size }} posts</span>
+</p>
+
+<div class="blog-search">
+  <input
+    type="search"
+    id="blog-filter"
+    placeholder="Search posts…"
+    autocomplete="off"
+    aria-label="Search posts"
+  />
+</div>
+
+{% assign all_tags = site.tags | sort %}
+<div class="tag-filter" id="tag-filter" role="group" aria-label="Filter by topic">
+  {% for tag in all_tags %}
+  <button
+    type="button"
+    class="tag-pill"
+    data-tag="{{ tag[0] }}"
+    aria-pressed="false"
+  >
+    {{ tag[0] }}<span class="tag-pill-count">{{ tag[1] | size }}</span>
+  </button>
   {% endfor %}
-</ul>
+  <button type="button" class="tag-clear" id="tag-clear" hidden>Clear</button>
+</div>
+
+{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+<div id="blog-list">
+  {% for year in posts_by_year %}
+  <section class="blog-year" data-year="{{ year.name }}">
+    <h2 class="blog-year-label">{{ year.name }}</h2>
+    <ul class="post-list">
+      {% for post in year.items %}
+      <li
+        class="post-row"
+        data-title="{{ post.title | downcase }}"
+        data-tags="{{ post.tags | join: ' ' }}"
+      >
+        <span class="post-date">{{ post.date | date: "%b %-d" }}</span>
+        <a href="{{ post.url }}" title="{{ post.title }}"
+          >{{ post.title }}<span class="post-arrow" aria-hidden="true">&rarr;</span></a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</div>
+
+<p class="blog-empty" id="blog-empty" hidden>
+  No posts match your filters.
+</p>
+
+<script>
+  (function () {
+    var input = document.getElementById('blog-filter');
+    var pills = Array.prototype.slice.call(document.querySelectorAll('.tag-pill'));
+    var clearBtn = document.getElementById('tag-clear');
+    var rows = Array.prototype.slice.call(document.querySelectorAll('.post-row'));
+    var years = Array.prototype.slice.call(document.querySelectorAll('.blog-year'));
+    var count = document.getElementById('blog-count');
+    var empty = document.getElementById('blog-empty');
+    var total = rows.length;
+    var active = [];
+
+    function rowTags(row) {
+      var t = (row.getAttribute('data-tags') || '').trim();
+      return t ? t.split(/\s+/) : [];
+    }
+
+    function matchesTags(row) {
+      if (!active.length) return true; // no tag selected -> all
+      var tags = rowTags(row);
+      for (var i = 0; i < active.length; i++) {
+        if (tags.indexOf(active[i]) !== -1) return true; // OR semantics
+      }
+      return false;
+    }
+
+    function apply() {
+      var q = input.value.trim().toLowerCase();
+      var shown = 0;
+
+      rows.forEach(function (row) {
+        var textMatch = !q || row.getAttribute('data-title').indexOf(q) !== -1;
+        var match = textMatch && matchesTags(row);
+        row.hidden = !match;
+        if (match) shown++;
+      });
+
+      years.forEach(function (year) {
+        year.hidden = !year.querySelector('.post-row:not([hidden])');
+      });
+
+      var filtering = q || active.length;
+      count.textContent = filtering
+        ? shown + ' of ' + total + ' posts'
+        : total + ' posts';
+      empty.hidden = shown !== 0;
+      clearBtn.hidden = active.length === 0;
+    }
+
+    pills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        var tag = pill.getAttribute('data-tag');
+        var idx = active.indexOf(tag);
+        if (idx === -1) {
+          active.push(tag);
+          pill.classList.add('is-active');
+          pill.setAttribute('aria-pressed', 'true');
+        } else {
+          active.splice(idx, 1);
+          pill.classList.remove('is-active');
+          pill.setAttribute('aria-pressed', 'false');
+        }
+        apply();
+      });
+    });
+
+    clearBtn.addEventListener('click', function () {
+      active = [];
+      pills.forEach(function (p) {
+        p.classList.remove('is-active');
+        p.setAttribute('aria-pressed', 'false');
+      });
+      apply();
+    });
+
+    input.addEventListener('input', apply);
+  })();
+</script>
