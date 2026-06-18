@@ -49,6 +49,11 @@ title: Blog
         <a href="{{ post.url }}" title="{{ post.title }}"
           >{{ post.title }}<span class="post-arrow" aria-hidden="true">&rarr;</span></a
         >
+        {% if post.tags.size > 0 %}
+        <span class="post-tags">
+          {% for t in post.tags %}<span class="tag-label" data-tag="{{ t }}">{{ t }}</span>{% endfor %}
+        </span>
+        {% endif %}
       </li>
       {% endfor %}
     </ul>

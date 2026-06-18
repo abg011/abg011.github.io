@@ -353,6 +353,42 @@ hr {
   transform: translateX(0);
 }
 
+/* tiny multicolor tag labels on each post row */
+.post-tags {
+  margin-left: auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-left: 8px;
+}
+
+.tag-label {
+  font-size: 0.66rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  padding: 3px 7px;
+  border-radius: 5px;
+  white-space: nowrap;
+  background: #f0f0f0;
+  color: #555;
+}
+
+.tag-label[data-tag="graphs"]              { background: hsl(210, 75%, 95%); color: hsl(210, 65%, 38%); }
+.tag-label[data-tag="dynamic-programming"] { background: hsl(270, 70%, 96%); color: hsl(270, 55%, 45%); }
+.tag-label[data-tag="strings"]             { background: hsl(145, 60%, 94%); color: hsl(145, 60%, 30%); }
+.tag-label[data-tag="math"]                { background: hsl(32, 90%, 93%);  color: hsl(28, 75%, 40%); }
+.tag-label[data-tag="arrays"]              { background: hsl(175, 60%, 93%); color: hsl(178, 65%, 28%); }
+.tag-label[data-tag="hashing"]             { background: hsl(192, 75%, 93%); color: hsl(196, 70%, 33%); }
+.tag-label[data-tag="bit-manipulation"]    { background: hsl(245, 75%, 96%); color: hsl(245, 55%, 50%); }
+.tag-label[data-tag="stack"]               { background: hsl(15, 80%, 94%);  color: hsl(12, 65%, 42%); }
+.tag-label[data-tag="go"]                  { background: hsl(192, 80%, 92%); color: hsl(193, 90%, 30%); }
+.tag-label[data-tag="concurrency"]         { background: hsl(330, 75%, 95%); color: hsl(330, 60%, 45%); }
+.tag-label[data-tag="distributed-systems"] { background: hsl(0, 75%, 95%);   color: hsl(0, 60%, 45%); }
+.tag-label[data-tag="system-design"]       { background: hsl(285, 65%, 95%); color: hsl(285, 50%, 47%); }
+.tag-label[data-tag="caching"]             { background: hsl(95, 55%, 93%);  color: hsl(100, 50%, 30%); }
+.tag-label[data-tag="meta"]                { background: hsl(220, 15%, 93%); color: hsl(220, 12%, 42%); }
+
 .blog-empty {
   color: var(--muted);
   margin-top: 28px;
@@ -479,5 +515,11 @@ th {
 
   .post-list .post-date {
     flex-basis: auto;
+  }
+
+  .post-tags {
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 5px;
   }
 }
