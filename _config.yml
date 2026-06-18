@@ -1,5 +1,4 @@
-name:  The Real Slim Shady
+name: Abhinav Gupta
+description: Software Engineer — distributed systems and AI.
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
-
-theme: jekyll-theme-slate
