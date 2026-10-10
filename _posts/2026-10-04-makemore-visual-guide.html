@@ -1,0 +1,60 @@
+---
+layout: none
+title: "Makemore: An Interactive Visual Guide"
+date: 2026-10-04
+tags: [ai, neural-networks, makemore]
+permalink: /blog/2026/10/04/makemore-visual-guide
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Makemore: An Interactive Visual Guide · Abhinav Gupta</title>
+<meta name="description" content="An interactive visual guide to makemore: layer shapes, initialization, BatchNorm, and manual backpropagation.">
+<style>
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+body { display: flex; flex-direction: column; background: #f6f5f0; color: #172723; font: 14px/1.4 system-ui, sans-serif; }
+header { flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 16px; border-bottom: 1px solid #dbe2db; background: #fff; }
+a { color: #176b50; text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid #315ba7; outline-offset: 3px; }
+main { flex: 1; min-height: 0; position: relative; }
+#makemore-guide { display: block; width: 100%; height: 100%; border: 0; background: #f6f5f0; }
+#makemore-guide[hidden], [hidden] { display: none; }
+#makemore-status, noscript p { padding: 20px; }
+</style>
+</head>
+<body>
+<header>
+<a href="/blog/">← Back to blog</a>
+<a href="https://github.com/abg011/PythonCode/blob/master/scripts/AKarp/makemore/makemore-at-a-glance.html" target="_blank" rel="noopener noreferrer">Source ↗</a>
+</header>
+<main>
+<p id="makemore-status" role="status">Loading the interactive guide…</p>
+<noscript><p>Enable JavaScript to view the interactive guide.</p></noscript>
+<iframe id="makemore-guide" title="Makemore interactive visual guide" sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox" hidden></iframe>
+</main>
+<script>
+(function () {
+  var status = document.getElementById('makemore-status');
+  var frame = document.getElementById('makemore-guide');
+  var source = 'https://raw.githubusercontent.com/abg011/PythonCode/7fb0ef6cb461f97b27de9fb960497fabdd1d3171/scripts/AKarp/makemore/makemore-at-a-glance.html';
+  fetch(source)
+    .then(function (response) {
+      if (!response.ok) throw new Error('Unable to load guide');
+      return response.text();
+    })
+    .then(function (html) {
+      frame.onload = function () { status.hidden = true; };
+      frame.srcdoc = html;
+      frame.hidden = false;
+    })
+    .catch(function () {
+      status.textContent = 'The guide could not load. Please refresh to try again, or use the Source link above.';
+    });
+})();
+</script>
+
+</body>
+</html>
